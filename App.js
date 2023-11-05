@@ -34,23 +34,23 @@ export default function App() {
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
-
   useEffect(() => {
     (async () => {
-      setAddress(defaultAddresss);
-
-      let {status} = await Location.requestBackgroundPermissionsAsync();
-
-      if(status !== "granted") {
-        setErrorMsg("Permission to access location is denied");
+      setAddress(defaultAddresss)
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
         return;
       }
-    let location = await Location.getCurrentPositionAsync({});
-      setLocation(location);
-      console.log("location", location)
+      console.log('Permission to access location was granted')
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);   
+      console.log(location)
     })();
-    
-  },[])
+  }, []);
+  
+  
+  
 
 
   if (!fontsLoaded) {

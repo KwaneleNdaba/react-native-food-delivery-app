@@ -13,6 +13,7 @@ import { LoginContext } from "../context/LoginContext";
 const Tab = createBottomTabNavigator();
 
 const tabBarStyle = {
+  
   backgroundColor: COLORS.primary,
   borderTopWidth: 0,
   elevation: 0, // This will remove the shadow on Android

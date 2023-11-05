@@ -11,6 +11,8 @@ import ChoicesList from "../components/ChoiceLists";
 import Heading from "../components/Heading";
 import NearbyRestaurants from "../components/NearbyRestaurants";
 import Devider from "../components/Devider,";
+import NewFoodsList from "../components/NewFoodsList";
+import FastestNearYou from "../components/FastestNearYou";
 
 
 const Home = () => {
@@ -45,6 +47,15 @@ const [selectedChoice, setSelectedChoice] =  useState(null)
     <Devider/>
 
     <Heading heading={"Try Something New"} onPress = {() => {}}/>
+
+    <NewFoodsList/>
+
+
+    <Devider/>
+
+    <Heading heading={"Fastest Near You"} onPress = {() => {}}/>
+
+    <FastestNearYou/>
 
 
     </View>
